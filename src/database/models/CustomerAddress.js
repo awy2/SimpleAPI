@@ -1,7 +1,12 @@
-
 module.exports = (Sequelize, DataTypes, databaseName) => {
+    return Sequelize.define('Customer_Addresse', {
+        ID: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true,
+            key: 'id',
 
-    Sequelize.define('Customer_Addresse', {
+        },
         CUSTOMER_ID: DataTypes.INTEGER,
         STREET_ADDRESS: DataTypes.STRING,
         POSTAL_CODE: DataTypes.STRING,
@@ -10,8 +15,5 @@ module.exports = (Sequelize, DataTypes, databaseName) => {
     {
         database: databaseName,
         timestamps: false,
-        associate: function(models) {
-            Customer_Addresse.belongsTo(models.Customer);
-          }
     });
 }
